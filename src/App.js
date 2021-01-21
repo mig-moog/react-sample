@@ -1,25 +1,23 @@
-import logo from './logo.svg';
 import './App.css';
+import React from "react";
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Title titleText="you is cool" url="//mig-moog.newgrounds.com" />
     </div>
   );
 }
 
+class Title extends React.Component {
+  render() {
+    let title = this.props.titleText ? this.props.titleText : "gorlo is cool";
+
+    return (
+      <div>
+        <a href={this.props.url}>{title}</a>
+      </div>
+    );
+  }
+}
 export default App;
